@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:16
+    container_name: db_app
+    env_file:
+      - .env-build
+
+  app:
+    build:
+      context: .
+    env_file:
+      - .env-build
+      -
